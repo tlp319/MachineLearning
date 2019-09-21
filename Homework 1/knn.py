@@ -75,7 +75,7 @@ def main():
 	# Which values from 1 to ks do we want to evaluate for K
     ks = 10
 	# How many times do we want to test the values of ks?
-    trials = 10
+    trials = 25
     mostAccuracy = 0
     bestK = 0
     runningAccuracyList = []
@@ -97,7 +97,7 @@ def main():
     # Produces a graph of accuracies over value of K. 
     print("The best K value is " + str(bestK) + ". With accuracy of " + str(max(runningAccuracyList)))
     plt.plot(yList, runningAccuracyList)
-    plt.title("KNN with K values 1-10")
+    plt.title("KNN with K values 1-" + str(ks))
     plt.xlabel("K Value")
     plt.ylabel("Prediction Accuracy")
     plt.show()
