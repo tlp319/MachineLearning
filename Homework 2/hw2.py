@@ -31,15 +31,14 @@ def k_means(k):
         mask = (clusters == i)
         labels[mask] = mode(digits.target[mask])[0]
 
-    returnArray = [str(accuracy_score(digits.target, labels)), labels, digits]
-    return returnArray
+    return [str(accuracy_score(digits.target, labels)), labels, digits]
 
 
 
 
 def main():
     # Range of K values to test = 1 to ks
-    ks = 14
+    ks = 1000
     bestK = K_Accuracy(0, 0, None)
     for i in range(ks):
         currentK = K_Accuracy(i+1, k_means(i+1)[0], None)
